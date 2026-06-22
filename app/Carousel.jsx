@@ -37,7 +37,6 @@ export default function Carousel({ images }) {
                 style={{ objectFit: 'cover' }}
                 priority={i === 0}
               />
-              <div className="carousel-label">{img.label}</div>
             </div>
           ))}
         </div>
