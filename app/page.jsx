@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import ContactForm from './ContactForm'
+import Carousel from './Carousel'
 
 const PORTAL_URL = 'https://redriver-kohl.vercel.app'
 
@@ -135,13 +136,8 @@ export default function Home() {
           <p className="section-label">Our work</p>
           <h2 className="section-title">Built. Printed. Installed.</h2>
         </div>
-        <div className="gallery-grid">
-          {GALLERY.map((img, i) => (
-            <div key={i} className={`gallery-item ${i === 0 || i === 10 ? 'gallery-item--wide' : ''}`}>
-              <Image src={img.src} alt={img.label} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-              <div className="gallery-label">{img.label}</div>
-            </div>
-          ))}
+        <div className="section" style={{ paddingTop: 0, paddingBottom: 0 }}>
+          <Carousel images={GALLERY} />
         </div>
       </div>
 
