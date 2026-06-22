@@ -1,12 +1,14 @@
+import Image from 'next/image'
+
 const PORTAL_URL = 'https://redriver-kohl.vercel.app'
 
 const SERVICES = [
-  { icon: '🖨️', title: 'Large Format Printing', desc: 'Vinyl banners, fabric displays, wallpaper, and UV DTF — priced per square metre.' },
-  { icon: '🪧', title: 'Signage & Boards', desc: 'Foam board, Correx, ACM, ABS, and Plexiglass with vinyl or print applied.' },
-  { icon: '👕', title: 'Branded Merch', desc: 'Business cards, flyers, branded clothing, and promotional items.' },
-  { icon: '🚚', title: 'Delivery & Installation', desc: 'Fleet delivery across Johannesburg with professional on-site installation.' },
-  { icon: '🎨', title: 'Artwork Support', desc: 'Print-ready file checks and spec confirmation before we hit print.' },
-  { icon: '📄', title: 'Sage-Ready Invoicing', desc: 'Full quote-to-invoice workflow with VAT-compliant documents.' },
+  { title: 'Large Format Printing', desc: 'Vinyl banners, fabric displays, wallpaper, and UV DTF — priced per square metre.' },
+  { title: 'Signage & Boards', desc: 'Foam board, Correx, ACM, ABS, and Plexiglass with vinyl or print applied.' },
+  { title: 'Branded Merch', desc: 'Business cards, flyers, branded clothing, and promotional items.' },
+  { title: 'Delivery & Installation', desc: 'Fleet delivery across Johannesburg with professional on-site installation.' },
+  { title: 'Artwork Support', desc: 'Print-ready file checks and spec confirmation before we hit print.' },
+  { title: 'Sage-Ready Invoicing', desc: 'Full quote-to-invoice workflow with VAT-compliant documents.' },
 ]
 
 export default function Home() {
@@ -14,7 +16,9 @@ export default function Home() {
     <>
       {/* NAV */}
       <nav className="nav">
-        <div className="nav-logo">Jozi <span>Graphix</span></div>
+        <a href="#home" className="nav-logo">
+          <Image src="/logo-white.png" alt="Jozi Graphix" width={160} height={50} style={{ height: 36, width: 'auto' }} priority />
+        </a>
         <ul className="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
@@ -35,7 +39,7 @@ export default function Home() {
           Johannesburg's premier printing partner. From business cards to large-format banners — we bring your brand to life with precision and quality.
         </p>
         <div className="hero-btns">
-          <a href={PORTAL_URL} className="btn-primary">Start Your Order</a>
+          <a href={PORTAL_URL} className="btn-primary">Start Your Quote</a>
           <a href="#services" className="btn-secondary">View Services</a>
         </div>
         <div className="scroll-hint">
@@ -52,7 +56,7 @@ export default function Home() {
           <div className="services-grid">
             {SERVICES.map(s => (
               <div key={s.title} className="service-card">
-                <div className="service-icon">{s.icon}</div>
+                <div className="service-icon" />
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
               </div>
@@ -73,6 +77,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer id="contact">
+        <Image src="/logo-white.png" alt="Jozi Graphix" width={120} height={40} style={{ height: 28, width: 'auto', opacity: 0.5 }} />
         <span>© {new Date().getFullYear()} Jozi Graphix. Johannesburg, South Africa.</span>
         <span>
           <a href="mailto:info@jozigraphix.co.za" style={{ color: 'inherit' }}>info@jozigraphix.co.za</a>
