@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import ContactForm from './ContactForm'
 
 const PORTAL_URL = 'https://redriver-kohl.vercel.app'
 
@@ -155,37 +156,10 @@ export default function Home() {
       </div>
 
       {/* CONTACT */}
-      {/* TODO before deploy: wire up form action to real email service (e.g. Resend, Formspree, or EmailJS) */}
       <div id="contact-form" style={{ padding: '100px 48px', maxWidth: 800, margin: '0 auto' }}>
         <p className="section-label">Get in touch</p>
         <h2 className="section-title">Let's make something.<br />Together.</h2>
-        <form className="contact-form">
-          <div className="contact-row">
-            <div className="field">
-              <label>Your name</label>
-              <input type="text" placeholder="John Smith" />
-            </div>
-            <div className="field">
-              <label>Email address</label>
-              <input type="email" placeholder="john@company.co.za" />
-            </div>
-          </div>
-          <div className="contact-row">
-            <div className="field">
-              <label>Phone number</label>
-              <input type="tel" placeholder="072 000 0000" />
-            </div>
-            <div className="field">
-              <label>Company</label>
-              <input type="text" placeholder="Your company name" />
-            </div>
-          </div>
-          <div className="field">
-            <label>What do you need?</label>
-            <textarea rows={5} placeholder="Tell us about your project. Size, quantity, timeline, anything you know..." />
-          </div>
-          <button type="submit" className="btn-primary" style={{ marginTop: 8 }}>Send message →</button>
-        </form>
+        <ContactForm />
       </div>
 
       {/* FOOTER */}
